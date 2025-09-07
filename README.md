@@ -18,5 +18,9 @@ A maioria deles é baseada nos microcontroladores STM32F4466RE e STM32F401RE.
 ## Como compilar
 Abra o projeto no STM32CubeIDE e clique em "Build".
 
+## Como baixar os projetos individualmente
+1 - Copiar a URL do projeto desejado
+2 - Abrir o site https://downgit.github.io/, colar a url e clicar em download
+
 ## Licença
 MIT
