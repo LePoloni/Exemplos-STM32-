@@ -1,0 +1,36 @@
+# Pastas de build (na raiz)
+#/Debug/
+#/Release/
+/.metadata/
+
+# Pastas de build (qulaquer pasta do projeto)
+Debug/
+Release/
+
+# Arquivos temporários e de IDE
+*.log
+*.launch
+*.swp
+*.swo
+*.bak
+*.tmp
+*.user
+*.DS_Store
+
+# Arquivos de configuração Eclipse (opcional)
+#.project
+#.cproject
+.settings/
+
+# Arquivos gerados pelo compilador
+*.o
+*.d
+*.elf
+*.map
+*.bin
+*.hex
+*.list
+*.dep
+
+# Arquivos de backup
+*~
