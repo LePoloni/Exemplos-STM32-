@@ -10,7 +10,7 @@
  *
  * @author      Leandro Poloni Dantas
  * @details     Compatível com controlador de touch XPT2046 presente em displays
- * 				do tipo TFT com driver ILI9341 e ST7789
+ * 							do tipo TFT com driver ILI9341 e ST7789
  * @version     1.0
  * @date        Julho de 2026
  * @details     Comentada de acordo com o padrão Doxygen.
@@ -22,15 +22,17 @@
  * 			Na configuração dos pinos para interface SPI, defina os pinos
  * 			para as funções abaixo com os nomes indicados:
  * 			Chip select: 	TOUCH_CS
- * 			IRQ: 			TOUCH_IRQ
+ * 			IRQ: 					TOUCH_IRQ
  * 			A porta 2 é padrão para SPI. Caso deseje outra porta, crie uma
  * 			definição como indicado abaixo no seu arquivo main.h:
  * 			#define TOUCH_SPI_PORT hspi<número>
  * ***************************************************************************
  * @details	Modificações:
- * @date	_________
- * @details	_________
  *
+ * @version 1.1
+ * @date    15/10/2026
+ * @details Corrigido o nome da função tft_initEx na inicialização
+ *          com detecção automática do controlador habilitada.
  *****************************************************************************
  */
 
@@ -115,11 +117,11 @@ bool touch_getCoordinates(uint16_t* x, uint16_t* y)
     if(raw_x > TOUCH_MAX_RAW_X) raw_x = TOUCH_MAX_RAW_X;
  
     uint32_t raw_y = (avg_y / 16);
-    if(raw_y < TOUCH_MIN_RAW_X) raw_y = TOUCH_MIN_RAW_Y;
+    if(raw_y < TOUCH_MIN_RAW_Y) raw_y = TOUCH_MIN_RAW_Y;
     if(raw_y > TOUCH_MAX_RAW_Y) raw_y = TOUCH_MAX_RAW_Y;
  
-    *x = (raw_x - TOUCH_MIN_RAW_X) * TOUCH_SCALE_X / (TOUCH_MAX_RAW_X - TOUCH_MIN_RAW_X);
-    *y = (raw_y - TOUCH_MIN_RAW_Y) * TOUCH_SCALE_Y / (TOUCH_MAX_RAW_Y - TOUCH_MIN_RAW_Y);
+    *x = (raw_x - TOUCH_MIN_RAW_X) * (TOUCH_SCALE_X - 1) / (TOUCH_MAX_RAW_X - TOUCH_MIN_RAW_X);
+    *y = (raw_y - TOUCH_MIN_RAW_Y) * (TOUCH_SCALE_Y - 1) / (TOUCH_MAX_RAW_Y - TOUCH_MIN_RAW_Y);
  
     return true;
 }

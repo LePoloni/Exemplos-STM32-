@@ -34,18 +34,26 @@
  * ***************************************************************************
  * @details	Modificações:
  *
- * @date	01/04/2026
  * @version	1.0
+ * @date		01/04/2026
  * @details	Funções básicas para driver ILI9341 e ST7789
  *
- * @date	11/07/2026
  * @verion	2.0
+ * @date		11/07/2026
  * @details	Foi totalmente revisado e compatibilizado com a biblioteca
- * 			paralela equivalente.
- * 			Passou a trabalhar com fontes do tipo GFX.
- * 			Todas as funções começam com tft_<letra minúscula>...
- * 			Testes feitos com display com driver ILI9341.
- * 			Comentários compatibilizados com o padrão Doxygen.
+ * 					paralela equivalente.
+ * 					Passou a trabalhar com fontes do tipo GFX.
+ * 					Todas as funções começam com tft_<letra minúscula>...
+ * 					Testes feitos com display com driver ILI9341.
+ * 					Comentários compatibilizados com o padrão Doxygen.
+ *
+ * @version 2.1
+ * @date		15/10/2026
+ * @details Corrigida a comparação do limite inferior do eixo Y,
+ *          substituindo TOUCH_MIN_RAW_X por TOUCH_MIN_RAW_Y.
+ * 					Corrigida a normalização das coordenadas para retornar
+ *          valores entre 0 e TOUCH_SCALE_X - 1 no eixo X e entre
+ *          0 e TOUCH_SCALE_Y - 1 no eixo Y.
  *
  *****************************************************************************
  */
@@ -93,8 +101,8 @@ extern SPI_HandleTypeDef TFT_SPI_PORT;
 #endif
 
 #ifndef TFT_DC_Pin
-#define TFT_DC_Pin        GPIO_PIN_4
-#define TFT_DC_GPIO_Port  GPIOA
+#define TFT_DC_Pin        GPIO_PIN_12
+#define TFT_DC_GPIO_Port  GPIOB
 #endif
 
 /* Optional readback pin definitions. Many SPI TFT modules do not connect MISO. */

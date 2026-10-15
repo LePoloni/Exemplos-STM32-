@@ -82,7 +82,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN Private defines */
 #define TFT_SPI_PORT hspi2
-//Escolher o modele de driver mais adequado ao display TFT SPI utilizado
+//Escolher o modelo de driver mais adequado ao display TFT SPI utilizado
 #define TFT_DRIVER_DEFAULT TFT_DRIVER_ILI9341
 //#define TFT_DRIVER_DEFAULT TFT_DRIVER_ST7789
 #define TOUCH_SPI_PORT hspi2

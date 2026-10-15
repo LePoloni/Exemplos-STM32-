@@ -28,8 +28,11 @@
  * 			#define TOUCH_SPI_PORT hspi<número>
  * ***************************************************************************
  * @details	Modificações:
- * @date	_________
- * @details	_________
+ *
+ * @version 1.1
+ * @date    15/10/2026
+ * @details Corrigido o nome da função tft_initEx na inicialização
+ *          com detecção automática do controlador habilitada.
  *
  *****************************************************************************
  */

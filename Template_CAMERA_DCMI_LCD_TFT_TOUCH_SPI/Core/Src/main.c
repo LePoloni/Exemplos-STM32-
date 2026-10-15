@@ -762,7 +762,7 @@ void tft_touch_testeToque(void)
 			//Como as coordenas do touch crescem da esquerda para direita,
 			//de baixo para cima, as coordenadas y devem ser invertidas para
 			//se adequarem a orientação do eixo y do display
-			y = 320 - y;
+			y = (320 - 1) - y;
 			tft_drawCircle(x, y, 4, TFT_RED);
 			tft_setCursor(15, 15);
 			size = sprintf(str, "X = %i\t Y = %i    ", x, y);
