@@ -55,6 +55,12 @@
  *          valores entre 0 e TOUCH_SCALE_X - 1 no eixo X e entre
  *          0 e TOUCH_SCALE_Y - 1 no eixo Y.
  *
+ * @version 2.2
+ * @date		21/10/2026
+ * @details Corrigida a função tft_drawChar para não imprimir os pontos de
+ * 					fundo das letras, quem deve cuidar de criar um fundo é a função
+ * 					tft_write_fillbackground.
+ *
  *****************************************************************************
  */
 

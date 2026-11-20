@@ -170,7 +170,7 @@ int main(void)
 	  }
 #endif
 #ifdef mouse
-	  //Teste o botão e envia um mensagem padrão se pressionado
+	  //Testa o botão e envia uma mensagem padrão se pressionado
 	  if(HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == GPIO_PIN_RESET)
 	  {
 		  move_mouse();
